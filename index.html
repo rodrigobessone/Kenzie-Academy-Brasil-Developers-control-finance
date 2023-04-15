@@ -1,26 +1,90 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Control Finance</title>
-    <link
-      rel="shortcut icon"
-      href="./src/assets/favicon.ico"
-      type="image/x-icon"
-    />
-    <meta
-      name="description"
-      content="Control Finance - Seu controle financeiro"
-    />
-    <link rel="stylesheet" href="./src/styles/globalStyles.css" />
-    <link rel="stylesheet" href="./src/styles/index.css" />
-  </head>
-  <body>
-    <main id="app"></main>
-    <script src="./src/scripts/modal.js"></script>
-    <script src="./src/scripts/valuesData.js"></script>
-    <script src="./src/scripts/index.js"></script>
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Control Finance</title>
+  <link rel="shortcut icon" href="./src/assets/favicon.ico" type="image/x-icon" />
+  <meta name="description" content="Control Finance - Seu controle financeiro" />
+  <link rel="stylesheet" href="./src/styles/globalStyles.css" />
+  <link rel="stylesheet" href="./src/styles/index.css" />
+  <link rel="stylesheet" href="./src/styles/modal.css" />
+  <link rel="stylesheet" href="./src/styles/desktop.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+  <header class="header">
+    <img src="./src/assets/Control Finance.svg" alt="logo" class="header__image">
+    <button class="header__button text-1-bold open-modal">Registrar novo valor</button>
+  </header>
+  <dialog class="modal">
+    <div class="modal__div-box">
+      <div class="modal__header">
+        <h2 class="modal__h2">Registro de valor</h2>
+        <button class="modal__close-btn " id="close">X</button>
+      </div>
+      <div class="modal__text-container">
+        <p class="modal__text-p">Digite o valor e em seguida aperte no botão referente ao tipo de valor</p>
+      </div>
+      <div class="modal__div-input">
+        <h3 class="modal__text-value">Valor</h3>
+        <input type="value" class="modal__text-input-value" id="modal__input" placeholder="R$ 00,00"
+          style="padding-left: 0;">
+      </div>
+      <div class="modal__buttons-p">
+        <p class="modal__text-different">Tipo de valor</p>
+        <label class="modal__buttons-text entrada" for="entrada">Entrada</label>
+        <input type="radio" name="valor" id="entrada" class="radio-entrada" hidden />
+        <label class="modal__buttons-text saida" for="saida">Saída</label>
+        <input type="radio" name="valor" id="saida" class="radio-saida" hidden />
+        <div class="modal__input-buttons">
+          <button class="button__decision" id="cancel">Cancelar</button>
+          <button class="button__decision" id="insert">Inserir valor</button>
+        </div>
+      </div>
+    </div>
+  </dialog>
+  <main id="app">
+    <section class="section">
+      <div class="section__div">
+        <h2 class="div__h2 title-2-medium">Resumo financeiro</h2>
+        <div class="section__div-buttons">
+          <button class="section__div-button text-1-bold" id="todos">Todos</button>
+          <button class="section__div-button text-1-bold" id="entradas">Entradas</button>
+          <button class="section__div-button text-1-bold" id="saidas">Saídas</button>
+        </div>
+      </div>
+      <div class="div__value">
+        <h3 class="text-1-medium div__value-h3">Soma dos valores</h3>
+        <span class="div__value-span text-1-medium"></span>
+      </div>
+      <div class="div__empty hide">
+        <h2 class="title-2-bold div__empty-h2">Nenhum valor cadastrado</h2>
+        <p class="text-1-medium dv__empty-p">Registrar novo valor</p>
+      </div>
+      <div class="div__values">
+        <ul class="ul__values">
+          <li class="li__values">
+            <span class="span_values"></span>
+            <div class="div__buttons-select">
+              <button class="button__category text-2-regular">Entrada</button>
+              <button class="button__trash">
+                <i class="fa-solid fa-trash"></i>
+              </button>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+  </main>
+  <script type="module" src="./src/scripts/modal.js"></script>
+  <script type="module" src="./src/scripts/valuesData.js"></script>
+  <script type="module" src="./src/scripts/index.js"></script>
+</body>
+
 </html>

@@ -1,0 +1,32 @@
+@media (min-width:736px) {
+    .header {
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .header__button {
+        width: 164px;
+    }
+
+    #app {
+        max-width: 687px;
+        display: flex;
+        flex-direction: column;
+        margin: 0 auto;
+
+    }
+
+    .section__div {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .modal {
+        max-width: 482px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
